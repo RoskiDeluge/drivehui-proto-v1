@@ -7,7 +7,7 @@ export default function Home() {
       <Banner />
       {/* @ts-ignore */}
       <ProductFeed />
-      <h1>Hello World</h1>
+      <footer>Add footer</footer>
     </main>
   );
 }
