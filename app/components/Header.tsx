@@ -9,6 +9,8 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
+  const { data: session } = useSession();
+
   return (
     <header>
       {/* Top nav */}
@@ -35,8 +37,11 @@ function Header() {
 
         {/* Right  */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div onClick={() => signIn("google")} className="cursor-pointer link">
-            <p>Hello, Roberto Delgado</p>
+          <div
+            onClick={!session ? () => signIn("google") : () => signOut()}
+            className="cursor-pointer link"
+          >
+            <p>{session ? `Hello, ${session.user!.name}` : "Sign in"}</p>
             <p className="md:text-sm">Account & Lists</p>
           </div>
           <div className="link">
