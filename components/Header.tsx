@@ -7,9 +7,11 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const { data: session } = useSession();
+  const router = useRouter();
 
   return (
     <header>
@@ -17,6 +19,7 @@ function Header() {
       <div className="flex items-center p-1 py-2 flex-grow bg-amazon_blue">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
+            onClick={() => router.push("/")}
             src="https://aleph-m-2.s3.amazonaws.com/hui_logo.png"
             width={90}
             height={45}
