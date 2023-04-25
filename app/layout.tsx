@@ -1,5 +1,5 @@
-import Header from "./components/Header";
-import { SessionProvider } from "./components/SessionProvider";
+import Header from "../components/Header";
+import { SessionProvider } from "../components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../pages/api/auth/[...nextauth]";
 import "./globals.css";
