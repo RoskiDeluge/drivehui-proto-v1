@@ -50,7 +50,10 @@ function Header() {
           <div className="link">
             <p className="md:text-sm">Rentals</p>
           </div>
-          <div className="relative link flex items-center">
+          <div
+            onClick={() => router.push("/checkout")}
+            className="relative link flex items-center"
+          >
             <span className="absolute top-0 right-0 md:right-6 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
               0
             </span>
